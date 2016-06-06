@@ -3,7 +3,7 @@ This is the class for a vertex. Vertices are single points on a graph, and are c
 @author Anish Seth
 @version 2/24/16
 */
-import java.util.ArrayList;
+
 public class Vertex<E>
 {
 	private E value;
