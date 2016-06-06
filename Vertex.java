@@ -3,11 +3,11 @@ This is the class for a vertex. Vertices are single points on a graph, and are c
 @author Anish Seth
 @version 2/24/16
 */
-
+import java.util.ArrayList;
 public class Vertex<E>
 {
 	private E value;
-	private boolean vist;
+	private boolean visit;
 	private Vector<Vertex<E>> connect;
 	private Vector<Integer> costs;
 	/**
@@ -17,7 +17,7 @@ public class Vertex<E>
 	{
 		value = e;
 		visit = false;
-		other = new Vector<Vertex<E>>();
+		connect = new Vector<Vertex<E>>();
 		costs = new Vector<Integer>();
 	}
 	public Vertex(E e, Vector<Vertex<E>> points, Vector<Integer> cost)
@@ -44,7 +44,7 @@ public class Vertex<E>
 	}
 	public int getCost(int i)
 	{
-		return cost.get(i);
+		return costs.get(i);
 	}
 	/**
 	Modifiers
@@ -56,14 +56,6 @@ public class Vertex<E>
 	{
 		connect.add(x);
 		costs.add(i);
-	}
-	/**
-	Free-floating point
-	*/
-	public void add(E e, int i)
-	{
-		value = e;
-		cost.set(i);
 	}
 	public void Arrival()
 	{
